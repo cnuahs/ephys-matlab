@@ -153,7 +153,8 @@ end
 %     cids = cids(~ismember(cids, noiseClusters));
 %     savefname = 'sp-Kilo.mat';
     
-notNoiseClusters = cids(cgs(:) ~=0 & cids(:) ~=0 & spikeCounts(:) ~=0);
+% notNoiseClusters = cids(cgs(:) ~=0 & cids(:) ~=0 & spikeCounts(:) ~=0);
+notNoiseClusters = cids(cgs(:) ~=0 & spikeCounts(:) ~=0);
 bigix   = ismember(clu, notNoiseClusters);
 smallix = ismember(cids, notNoiseClusters);
 st = st(bigix);
